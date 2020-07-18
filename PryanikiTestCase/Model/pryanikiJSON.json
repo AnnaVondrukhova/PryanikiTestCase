@@ -1,0 +1,43 @@
+{
+  "data": [
+    {
+      "name": "hz",
+      "data": {
+        "text": "тринитротолуол"
+      }
+    },
+    {
+      "name": "picture",
+      "data": {
+        "url": "https://pryaniky.com/static/img/logo-a-512.png",
+        "text": "Пряники"
+      }
+    },
+    {
+      "name": "selector",
+      "data": {
+        "selectedId": 1,
+        "variants": [
+          {
+            "id": 0,
+            "text": "Вариант 1"
+          },
+          {
+            "id": 1,
+            "text": "Вариант 2"
+          },
+          {
+            "id": 2,
+            "text": "Вариант 777"
+          }
+        ]
+      }
+    }
+  ],
+  "view": [
+    "hz",
+    "selector",
+    "picture",
+    "hz"
+  ]
+}
