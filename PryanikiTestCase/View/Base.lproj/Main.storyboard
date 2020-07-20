@@ -155,7 +155,6 @@
                         <outlet property="activityIndicator" destination="Uc1-yw-xJ5" id="zvE-Kc-4JD"/>
                         <outlet property="tableView" destination="9ql-Pb-L8B" id="7cg-Oo-Z7P"/>
                         <outlet property="textLabel" destination="BzC-ic-no4" id="Kkd-Am-iRQ"/>
-                        <outlet property="urlAndTextView" destination="Zcj-65-ZGX" id="EKQ-44-p2G"/>
                         <outlet property="urlImageView" destination="VIP-HL-Q1G" id="kcw-e4-wil"/>
                     </connections>
                 </viewController>

@@ -10,7 +10,6 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     
-    @IBOutlet var urlAndTextView: UIView!
     @IBOutlet var urlImageView: UIImageView!
     @IBOutlet var textLabel: UILabel!
     @IBOutlet var tableView: UITableView!

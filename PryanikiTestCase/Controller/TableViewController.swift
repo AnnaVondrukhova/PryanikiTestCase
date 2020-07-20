@@ -18,12 +18,11 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         fetchData()
     }
     
     private func fetchData() {
-        NetworkManager.shared.getFakeJSON(urlString: urlString) { (json) in
+        NetworkManager.shared.getJSON(urlString: urlString) { (json) in
             if let dataItems = json.data {
                 self.dataItems = dataItems
             }
@@ -80,10 +79,6 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44
     }
-    
-    
-    
-    
     
     // MARK: - Navigation
     
