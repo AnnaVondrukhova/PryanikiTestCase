@@ -18,7 +18,7 @@
 		C1F79CF924C0A2E00022E012 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F79CF824C0A2E00022E012 /* TableViewCell.swift */; };
 		C1F79CFB24C0AC9D0022E012 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F79CFA24C0AC9D0022E012 /* DetailsViewController.swift */; };
 		C1F79CFD24C0ACCC0022E012 /* VariantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F79CFC24C0ACCC0022E012 /* VariantCell.swift */; };
-		C1F79D0124C196880022E012 /* pryanikiJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = C1F79D0024C196880022E012 /* pryanikiJSON.json */; };
+		C1F79D0324C57A480022E012 /* pryanikiJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = C1F79D0224C57A480022E012 /* pryanikiJSON.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +35,7 @@
 		C1F79CF824C0A2E00022E012 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		C1F79CFA24C0AC9D0022E012 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		C1F79CFC24C0ACCC0022E012 /* VariantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariantCell.swift; sourceTree = "<group>"; };
-		C1F79D0024C196880022E012 /* pryanikiJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pryanikiJSON.json; sourceTree = "<group>"; };
+		C1F79D0224C57A480022E012 /* pryanikiJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pryanikiJSON.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +84,7 @@
 		C1F79CEE24C0952F0022E012 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C1F79D0024C196880022E012 /* pryanikiJSON.json */,
+				C1F79D0224C57A480022E012 /* pryanikiJSON.json */,
 				C1F79CEF24C0956C0022E012 /* PryanikiJSONStruct.swift */,
 			);
 			path = Model;
@@ -177,7 +177,7 @@
 			files = (
 				C1F79CE724C095180022E012 /* LaunchScreen.storyboard in Resources */,
 				C1F79CE424C095180022E012 /* Assets.xcassets in Resources */,
-				C1F79D0124C196880022E012 /* pryanikiJSON.json in Resources */,
+				C1F79D0324C57A480022E012 /* pryanikiJSON.json in Resources */,
 				C1F79CE224C095160022E012 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

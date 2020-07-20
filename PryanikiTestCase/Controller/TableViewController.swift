@@ -29,11 +29,10 @@ class TableViewController: UITableViewController {
             }
             
             if let viewItems = json.view {
-                //Вариант 1
-//                self.viewItems = viewItems
+                self.viewItems = viewItems
                 
-                //Вариант 2
-                self.viewItems = viewItems.reduce([], { $0.contains($1) ? $0 : $0 + [$1]})
+                //Вариант 2 - если нужно отображать только уникальные строки
+//                self.viewItems = viewItems.reduce([], { $0.contains($1) ? $0 : $0 + [$1]})
             }
             
             DispatchQueue.main.async {

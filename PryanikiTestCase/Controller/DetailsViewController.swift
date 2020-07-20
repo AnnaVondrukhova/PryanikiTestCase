@@ -35,9 +35,8 @@ class DetailsViewController: UIViewController {
     
     private func congigureView(with data: JSONObjectData) {
         let guide = view.safeAreaLayoutGuide
-        if (data.url == nil)&&(data.text == nil) {
+        if (data.url == nil)&&(data.text == nil)&&(data.variants != nil) {
             tableView.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
-            print("height = 0")
         } else {
             if data.url != nil {
                 urlImageView.image = getImageWithUrl(urlString: data.url!)
@@ -53,9 +52,12 @@ class DetailsViewController: UIViewController {
     }
     
     private func getImageWithUrl(urlString: String) -> UIImage {
+        
         guard let url = URL(string: urlString) else {return UIImage()}
-        guard let imageData  = try? Data(contentsOf: url) else { return UIImage() }
-        guard let image = UIImage(data: imageData) else { return UIImage() }
+        guard let imageData  = try? Data(contentsOf: url) else {
+            return UIImage(systemName: "plus")! }
+        guard let image = UIImage(data: imageData) else {
+            return UIImage(systemName: "plus")! }
         
         return image
     }
