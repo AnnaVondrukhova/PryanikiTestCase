@@ -14,6 +14,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet var urlImageView: UIImageView!
     @IBOutlet var textLabel: UILabel!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
     var selectedItem: JSONObject!
     
@@ -24,6 +25,8 @@ class DetailsViewController: UIViewController {
         tableView.dataSource = self
         
         self.navigationItem.title = selectedItem.name ?? ""
+        activityIndicator.isHidden = true
+        activityIndicator.hidesWhenStopped = true
         
         guard let data = selectedItem.data else {
             print ("no data in selected item")
@@ -34,12 +37,19 @@ class DetailsViewController: UIViewController {
     }
     
     private func congigureView(with data: JSONObjectData) {
-        let guide = view.safeAreaLayoutGuide
-        if (data.url == nil)&&(data.text == nil)&&(data.variants != nil) {
+        
+        if (data.url == nil)&&(data.text == nil)&&(data.variants != nil)&&(!data.variants!.isEmpty) {
+            let guide = view.safeAreaLayoutGuide
             tableView.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
         } else {
             if data.url != nil {
-                urlImageView.image = getImageWithUrl(urlString: data.url!)
+                activityIndicator.isHidden = false
+                activityIndicator.startAnimating()
+                
+                NetworkManager.getImageWithUrl(urlString: data.url!) { image in
+                    self.activityIndicator.stopAnimating()
+                    self.urlImageView.image = image
+                }
             }
             
             if data.text != nil {
@@ -50,18 +60,6 @@ class DetailsViewController: UIViewController {
             tableView.isHidden = false
         }
     }
-    
-    private func getImageWithUrl(urlString: String) -> UIImage {
-        
-        guard let url = URL(string: urlString) else {return UIImage()}
-        guard let imageData  = try? Data(contentsOf: url) else {
-            return UIImage(systemName: "plus")! }
-        guard let image = UIImage(data: imageData) else {
-            return UIImage(systemName: "plus")! }
-        
-        return image
-    }
-    
 }
 
 extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {

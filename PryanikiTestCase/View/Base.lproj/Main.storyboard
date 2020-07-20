@@ -115,13 +115,22 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Uc1-yw-xJ5">
+                                        <rect key="frame" x="40" y="40" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="4xS-x9-UaS"/>
+                                            <constraint firstAttribute="height" constant="20" id="jzf-Fd-1qu"/>
+                                        </constraints>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="VIP-HL-Q1G" firstAttribute="top" secondItem="Zcj-65-ZGX" secondAttribute="top" constant="10" id="AqX-qa-tET"/>
+                                    <constraint firstItem="Uc1-yw-xJ5" firstAttribute="centerY" secondItem="VIP-HL-Q1G" secondAttribute="centerY" id="Gyd-79-AfN"/>
                                     <constraint firstItem="BzC-ic-no4" firstAttribute="leading" secondItem="VIP-HL-Q1G" secondAttribute="trailing" constant="10" id="VcO-Lj-Ikn"/>
                                     <constraint firstAttribute="height" constant="100" id="Vcz-0I-syx"/>
                                     <constraint firstAttribute="trailing" secondItem="BzC-ic-no4" secondAttribute="trailing" constant="10" id="Ykl-ye-Ory"/>
+                                    <constraint firstItem="Uc1-yw-xJ5" firstAttribute="centerX" secondItem="VIP-HL-Q1G" secondAttribute="centerX" id="ZQe-zo-cDM"/>
                                     <constraint firstAttribute="bottom" secondItem="VIP-HL-Q1G" secondAttribute="bottom" constant="10" id="gDm-be-gDV"/>
                                     <constraint firstAttribute="bottom" secondItem="BzC-ic-no4" secondAttribute="bottom" constant="10" id="gmS-Or-IZh"/>
                                     <constraint firstItem="BzC-ic-no4" firstAttribute="top" secondItem="Zcj-65-ZGX" secondAttribute="top" constant="10" id="uFE-2d-UHn"/>
@@ -143,6 +152,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="XFO-Zo-JsA"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Uc1-yw-xJ5" id="zvE-Kc-4JD"/>
                         <outlet property="tableView" destination="9ql-Pb-L8B" id="7cg-Oo-Z7P"/>
                         <outlet property="textLabel" destination="BzC-ic-no4" id="Kkd-Am-iRQ"/>
                         <outlet property="urlAndTextView" destination="Zcj-65-ZGX" id="EKQ-44-p2G"/>

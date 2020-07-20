@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class NetworkManager {
     static var shared = NetworkManager()
@@ -27,6 +28,29 @@ class NetworkManager {
              }
          }.resume()
      }
+    
+    static func getImageWithUrl(urlString: String, completion: @escaping (UIImage)->()) {
+        
+        guard let url = URL(string: urlString) else {
+            DispatchQueue.main.async {
+                completion(UIImage(systemName: "plus")!)
+            }
+            return
+        }
+        
+        let session = URLSession.shared
+        session.dataTask(with: url) { (data, response, error) in
+            if let data = data, let image = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    completion(image)
+                }
+            } else {
+                DispatchQueue.main.async {
+                    completion(UIImage(systemName: "plus")!)
+                }
+            }
+        } .resume()
+    }
     
     //MARK: Testing
     func getFakeJSON(urlString: String, completion: @escaping (PryanikiJSON) -> ()) {
